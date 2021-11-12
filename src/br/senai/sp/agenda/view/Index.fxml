@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.senai.sp.agenda.controller.IndexController">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="4.0" prefHeight="630.0" prefWidth="500.0" styleClass="principal">
+         <children>
+            <DatePicker fx:id="datatf" layoutX="13.0" layoutY="100.0" prefHeight="48.0" prefWidth="113.0" styleClass="pfdate" />
+            <TextField fx:id="tarefatf" layoutX="162.0" layoutY="153.0" styleClass="tftarefas" />
+            <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="115.0" prefHeight="17.0" prefWidth="113.0" text="Tarefa:" textFill="RED">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label layoutX="13.0" layoutY="58.0" prefHeight="27.0" prefWidth="167.0" text="Data Para Relização:" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="197.0" prefHeight="17.0" prefWidth="113.0" text="Status:" textFill="RED">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <TextField fx:id="statustf" editable="false" layoutX="162.0" layoutY="239.0" styleClass="tfstatus" />
+            <TextArea fx:id="comentariostf" layoutX="150.0" layoutY="333.0" prefHeight="80.0" prefWidth="200.0" styleClass="tfcomentarios" />
+            <Label layoutX="177.0" layoutY="292.0" prefHeight="32.0" prefWidth="149.0" text="Comentários:" textFill="RED">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Button layoutX="21.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnsalvar" prefHeight="80.0" prefWidth="91.0" textFill="#723636">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/salvar.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="139.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnexcluir" prefHeight="80.0" prefWidth="91.0">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/trash-bin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="262.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnclear" prefHeight="90.0" prefWidth="82.0">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/cleaning.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="379.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnadiar" prefHeight="90.0" prefWidth="82.0" styleClass="btnadiarpf">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/adiar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="TITULOTF" layoutX="162.0" layoutY="14.0" prefHeight="31.0" prefWidth="200.0" text="COMPANY'S JOÃO" textFill="RED">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Hyperlink fx:id="linktf" layoutX="265.0" layoutY="443.0" prefHeight="23.0" prefWidth="194.0" styleClass="tflink" text="COMPANY'S &amp;&amp; JOÃO.COM.BR" textFill="#00d9ff" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

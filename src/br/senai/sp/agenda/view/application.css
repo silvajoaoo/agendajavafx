@@ -1,0 +1,10 @@
+.tfstatus{
+
+    -fx-background-color: red;
+    -fx-color-label-visible: black;
+}
+.principal{
+	
+	-fx-background-color: whitesmoke;
+	-fx-font-weight: bold;
+}
