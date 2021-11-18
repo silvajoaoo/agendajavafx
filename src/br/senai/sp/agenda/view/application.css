@@ -1,10 +1,54 @@
 .tfstatus{
 
-    -fx-background-color: red;
-    -fx-color-label-visible: black;
+    -fx-background-color: blue;
 }
 .principal{
 	
 	-fx-background-color: whitesmoke;
 	-fx-font-weight: bold;
 }
+
+.btnclearpf{
+	
+	-fx-background-color: blue;
+}
+.btnadiarpf{
+	
+	-fx-background-color: blue;
+}
+
+.btnexcluirpf{
+	
+	-fx-background-color: blue;
+}
+
+.btnsalvarpf{
+	
+	-fx-background-color: blue;
+}
+.tftarefa{
+	
+	-fx-background-color: blue;
+}
+.pfdate{
+	
+	-fx-background-color: blue;
+}
+
+.tfcomentarios{
+	
+		-fx-border-color: blue;
+}
+
+.tftarefas{
+	
+		-fx-border-color: blue;
+}
+	
+	
+	.tfstatus{
+	
+		-fx-border-color: blue;
+}
+	
+	
