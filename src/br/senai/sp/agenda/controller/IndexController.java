@@ -1,5 +1,7 @@
 package br.senai.sp.agenda.controller;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -63,7 +65,6 @@ public class IndexController implements Initializable {
 		// chamando o metodo limpar Campos
 		limparCampos();
 		comentariostf.setStyle("-fx-background-color:red");
-		
 
 	}
 
@@ -86,7 +87,6 @@ public class IndexController implements Initializable {
 			JOptionPane.showMessageDialog(null, "Informe Os Comentarios da Tarefa", "Informe",
 					JOptionPane.ERROR_MESSAGE);
 			comentariostf.requestFocus();
-			
 
 		} else {
 			// verifica se a data informada nao é anterior a data atual
@@ -106,14 +106,27 @@ public class IndexController implements Initializable {
 				tarefa.setDataLimite(datatf.getValue());
 				tarefa.setStatus(StatusTarefa.ABERTA);
 				tarefa.setComentario(comentariostf.getText());
-	
+				tarefa.setDescricao(tarefatf.getText());
 
-				// TODO salvar no banco de dados
+				// salvar no banco de dados
+
+				System.out.println(tarefa.formatToSave());
 
 				// Limpar os campos do formulario
-				
-				// chamando o metodo limpar campos
-				limparCampos();
+
+				try {
+					TarefaIO.insert(tarefa);
+					// chamando o metodo limpar campos
+					limparCampos();
+				} catch (FileNotFoundException e) {
+					JOptionPane.showConfirmDialog(null, "Arquivo Não Encontrado" + e.getMessage(), "Erro",
+							JOptionPane.ERROR_MESSAGE);
+					e.printStackTrace();
+				} catch (IOException e) {
+					JOptionPane.showConfirmDialog(null, "Erro De I/O: " + e.getMessage(), "Erro",
+							JOptionPane.ERROR_MESSAGE);
+					e.printStackTrace();
+				}
 
 			}
 
@@ -126,7 +139,6 @@ public class IndexController implements Initializable {
 		tarefa = null;
 		comentariostf.setText("");
 		statustf.setText("");
-		comentariostf.setText("");
 		tarefatf.setText("");
 		datatf.setValue(null);
 		datatf.requestFocus();
@@ -134,13 +146,7 @@ public class IndexController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-	
-		
-	}
-	
-	
-	
-	
+
 	}
 
-
+}
