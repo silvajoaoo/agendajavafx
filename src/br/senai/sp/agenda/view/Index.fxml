@@ -4,6 +4,11 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -11,31 +16,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="painel" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.senai.sp.agenda.controller.IndexController">
+<AnchorPane fx:id="painel" prefHeight="632.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.senai.sp.agenda.controller.IndexController">
    <children>
-      <AnchorPane fx:id="painel" layoutX="1.0" layoutY="4.0" prefHeight="630.0" prefWidth="500.0" styleClass="principal">
+      <AnchorPane fx:id="painel" layoutX="7.0" layoutY="-19.0" prefHeight="700.0" prefWidth="1181.0" styleClass="principal" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <DatePicker fx:id="datatf" layoutX="13.0" layoutY="100.0" prefHeight="48.0" prefWidth="113.0" styleClass="pfdate" />
-            <TextField fx:id="tarefatf" layoutX="162.0" layoutY="153.0" styleClass="tftarefa" />
-            <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="115.0" prefHeight="17.0" prefWidth="113.0" styleClass="p" text="Tarefa:">
+            <DatePicker fx:id="datatf" layoutX="534.0" layoutY="91.0" prefHeight="48.0" prefWidth="113.0" styleClass="pfdate" />
+            <TextField fx:id="tarefatf" layoutX="162.0" layoutY="153.0" promptText="Descreva  a Tarefa" styleClass="tftarefa" />
+            <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="115.0" prefHeight="17.0" prefWidth="113.0" styleClass="p" text="Tárefa:" textFill="#0101ff">
                <font>
                   <Font size="22.0" />
                </font></Label>
-            <Label layoutX="13.0" layoutY="58.0" prefHeight="27.0" prefWidth="167.0" styleClass="p" text="Data Para Relização :">
+            <Label layoutX="499.0" layoutY="42.0" prefHeight="27.0" prefWidth="167.0" styleClass="p" text="Data Para Relização :">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="197.0" prefHeight="17.0" prefWidth="113.0" text="Status:">
+            <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="197.0" prefHeight="17.0" prefWidth="113.0" text="Status:" textFill="#0004ff">
                <font>
                   <Font size="22.0" />
                </font></Label>
-            <TextField fx:id="statustf" editable="false" layoutX="162.0" layoutY="239.0" styleClass="tfstatus" />
-            <TextArea fx:id="comentariostf" layoutX="150.0" layoutY="362.0" prefHeight="80.0" prefWidth="200.0" styleClass="tfcomentarios" />
-            <Label layoutX="177.0" layoutY="292.0" prefHeight="32.0" prefWidth="149.0" styleClass="p" text="Comentários:">
+            <TextField fx:id="statustf" editable="false" layoutX="162.0" layoutY="239.0" prefHeight="39.0" prefWidth="149.0" styleClass="tfstatus" />
+            <TextArea fx:id="comentariostf" layoutX="85.0" layoutY="348.0" prefHeight="80.0" prefWidth="365.0" promptText="Descreva O Comentário" styleClass="tfcomentarios" />
+            <Label layoutX="177.0" layoutY="292.0" prefHeight="32.0" prefWidth="149.0" styleClass="p" text="Comentários:" textFill="#2200ff">
                <font>
                   <Font size="22.0" />
                </font></Label>
-            <Button fx:id="btnsalvarclick" layoutX="21.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnsalvar" prefHeight="80.0" prefWidth="91.0" styleClass="btnsalvarpf" textFill="#723636">
+            <Button fx:id="btnsalvarclick" layoutX="21.0" layoutY="511.0" mnemonicParsing="false" onAction="#btnsalvar" prefHeight="80.0" prefWidth="91.0" styleClass="btnsalvarpf" textFill="#ff0e0e">
                <graphic>
                   <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,7 +48,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btnexcluirclick" layoutX="139.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnexcluir" prefHeight="80.0" prefWidth="91.0" styleClass="btnexcluirpf">
+            <Button fx:id="btnexcluirclick" disable="true" layoutX="485.0" layoutY="511.0" mnemonicParsing="false" onAction="#btnexcluir" prefHeight="80.0" prefWidth="91.0" styleClass="btnexcluirpf">
                <graphic>
                   <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,30 +57,72 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btnclearclick" layoutX="262.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnclear" prefHeight="90.0" prefWidth="82.0" styleClass="btnclearpf">
+            <Button fx:id="btnconcluirclick" layoutX="188.0" layoutY="511.0" mnemonicParsing="false" onAction="#btnconcluir" prefHeight="90.0" prefWidth="82.0" styleClass="btnclearpf">
                <graphic>
                   <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imagens/cleaning.png" />
+                        <Image url="@../../../../../../../../Downloads/verificar.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="clickadiar" layoutX="379.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnadiar" prefHeight="90.0" prefWidth="82.0" styleClass="btnadiarpf">
+            <Button fx:id="clickadiar" disable="true" layoutX="341.0" layoutY="511.0" mnemonicParsing="false" onAction="#btnadiar" prefHeight="90.0" prefWidth="82.0" styleClass="btnadiarpf">
                <graphic>
-                  <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="82.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imagens/adiar.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Label fx:id="TITULOTF" layoutX="162.0" layoutY="14.0" prefHeight="31.0" prefWidth="200.0" styleClass="p" text="COMPANY'S JOÃO" textFill="#3700ff">
+            <Label fx:id="TITULOTF" layoutX="152.0" layoutY="53.0" prefHeight="31.0" prefWidth="200.0" styleClass="p" text="COMPANY'S JOÃO" textFill="#3700ff">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Hyperlink fx:id="linktf" layoutX="282.0" layoutY="477.0" prefHeight="23.0" prefWidth="194.0" styleClass="tflink" text="COMPANY'S &amp;&amp; JOÃO.COM.BR" textFill="#00d9ff" />
+            <Hyperlink fx:id="linktf" layoutX="65.0" layoutY="656.0" prefHeight="23.0" prefWidth="194.0" styleClass="tflink" text="COMPANY'S &amp;&amp; JOÃO.COM.BR" textFill="#0400ff" />
+            <TableView fx:id="tvTarefa" layoutX="696.0" layoutY="46.0" prefHeight="609.0" prefWidth="387.0">
+              <columns>
+                <TableColumn fx:id="tcData" prefWidth="115.0" text="DATA" />
+                <TableColumn fx:id="tcTarefa" prefWidth="271.0" text="TAREFA" />
+              </columns>
+            </TableView>
+            <TextField fx:id="codigo" editable="false" layoutX="540.0" layoutY="350.0" prefHeight="25.0" prefWidth="139.0" styleClass="tfstatus" />
+            <Label alignment="TOP_CENTER" layoutX="570.0" layoutY="308.0" prefHeight="32.0" prefWidth="79.0" styleClass="p" text="Código" textFill="#1500ff">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dataFinalizada" editable="false" layoutX="553.0" layoutY="259.0" prefHeight="25.0" prefWidth="113.0" styleClass="tfstatus" />
+            <Label fx:id="TITULOTF1" layoutX="535.0" layoutY="214.0" prefHeight="31.0" prefWidth="149.0" styleClass="p" text="Data Finalizada" textFill="#3700ff">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnLimparclick" layoutX="591.0" layoutY="511.0" mnemonicParsing="false" onAction="#btnLimpar" prefHeight="80.0" prefWidth="91.0" styleClass="btnexcluirpf">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/limpar-limpo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <MenuBar layoutX="53.0" layoutY="24.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" onAction="#menuPrincipal" text="Arquivo">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#menuItem" text="Sair" />
+                        <MenuItem mnemonicParsing="false" onAction="#menuExportar" text="Exportar Para HTML" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" onAction="#menuAjuda" text="Ajuda">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#menuAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
          </children>
       </AnchorPane>
    </children>

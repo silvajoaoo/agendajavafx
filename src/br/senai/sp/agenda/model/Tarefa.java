@@ -1,10 +1,10 @@
 package br.senai.sp.agenda.model;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Tarefa {
+// IMPLEMENTANDO UM METODO QUE SABE SE COMPARAR COM OUTRO OBJETO//
+public class Tarefa implements Comparable<Tarefa> {
 
 	private long id;
 	private LocalDate dataCriacao;
@@ -71,7 +71,8 @@ public class Tarefa {
 	}
 
 	public String formatToSave() {
-		// contruindo uma string
+
+		// construindo uma string
 		StringBuilder builder = new StringBuilder();
 
 		// formatando a data no padrao normal dia/mes/ano
@@ -93,5 +94,22 @@ public class Tarefa {
 		builder.append(this.getStatus().ordinal() + "\n");
 		// devolve Uma String
 		return builder.toString();
+	}
+
+	@Override
+	public int compareTo(Tarefa o) {
+		
+	if(this.getDataLimite().isBefore(o.getDataLimite())) {
+		
+		return -1;
+	}else if(this.getDataLimite().isAfter(o.getDataLimite())) {
+		
+		return 1;
+	}else {
+		
+		return this.getDescricao().compareTo(o.getDescricao());
+	}
+		
+	
 	}
 }

@@ -1,59 +1,14 @@
-.tfstatus{
-
-    -fx-background-color: blue;
-}
-.principal{
+.table-row-cell:selected{
 	
-	-fx-background-color: whitesmoke;
-	-fx-font-weight: bold;
-}
+	-fx-background-color: #002962 !important;
+} 
 
-.btnclearpf{
+.table-row-cell:selected .text{
 	
-	-fx-background-color: blue;
+	-fx-fill: #fff;
 }
 
-.painel{
+.fundo{
 	
-	-fx-background-color: blue;
+	-fx-background-color: red;
 }
-.btnadiarpf{
-	
-	-fx-background-color: blue;
-}
-
-.btnexcluirpf{
-	
-	-fx-background-color: blue;
-}
-
-.btnsalvarpf{
-	
-	-fx-background-color: blue;
-}
-.tftarefa{
-	
-	-fx-background-color: blue;
-}
-.pfdate{
-	
-	-fx-background-color: blue;
-}
-
-.tfcomentarios{
-	
-		-fx-border-color: blue;
-}
-
-.tftarefas{
-	
-		-fx-border-color: blue;
-}
-	
-	
-	.tfstatus{
-	
-		-fx-border-color: blue;
-}
-	
-	
